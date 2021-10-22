@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-Proyecto Base</title>
+  <script type="module" src="./src/app.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<!-- <style>
+body {
+  background-image: url('/assets/Imagen-menu.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+  </style> -->
+  
+
+
+  <div id="renderScene">
+  <img src="/assets/Imagen-menu.png" class="Fondo">
+</div> 
+
+<div id="content">
+  <!-- <style>
+  body {
+  background-image: url('/assets/Imagen-menu.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+</style> -->
+
+
+  
+  <div class="btnOption modelBtn" >
+    <div class="title">Catalogo</div>
+  </div>
+ </div>
+
+<div id="contentModels">
+  <div class="btnOptionModels custom modelOne">
+    <div class="title">Imagen 1</div>
+  </div>
+  <div class="btnOptionModels custom modelTwo">
+    <div class="title">Imagen 2</div>
+  </div>
+  <div class="btnOptionModels custom modelThree">
+    <div class="title">Imagen 3</div>
+  </div>
+  <div class="btnOptionModels custom modelFourth">
+    <div class="title">Imagen 4</div>
+  </div>
+  <!-- <div class="backBtn">
+    <div class="title">Volver</div>
+  </div> -->
+ </div>
+<div id="contentTexture">
+  <div class="btnOptionTexture custom">
+    <div class="title">Textura 1</div>
+  </div>
+  <div class="btnOptionTexture custom">
+    <div class="title">Textura 2</div>
+  </div>
+  <div class="btnOptionTexture custom">
+    <div class="title">Textura 3</div>
+  </div>
+</div>
+
+
+<script type="module">
+  import { main,changeModel } from './src/app.js';
+
+  const options = document.querySelectorAll('.btnOption');
+  const content = document.querySelector('#content');
+  const btnModelOne = document.querySelector('.modelOne');
+  const btnModelTwo = document.querySelector('.modelTwo');
+  const btnModelThree = document.querySelector('.modelThree');
+  const btnModelFourth = document.querySelector('.modelFourth');
+
+  /* const modelBtn = document.querySelector('#modelBtn'); */
+  //const backBtn = document.querySelector('#backBtn');
+  /* const Model = document.querySelectorAll('#Model'); */
+
+  options.forEach(optionSelected => {
+      optionSelected.onclick = function(){
+        toogleContent();
+        main();
+      }
+    });
+  /* modelBtn.onclick=function(){
+    main();
+
+  }
+ */
+  /* backBtn.onclick = function(){
+    toogleContent();
+  } */
+  btnModelOne.onclick = function () {
+      changeModel('modelOne');
+  }
+
+  btnModelTwo.onclick = function () {
+      changeModel('modelTwo');
+  }
+
+  btnModelThree.onclick = function () {
+      changeModel('modeThree');
+  }
+
+  btnModelFourth.onclick = function () {
+      changeModel('modelFourth');
+  }
+
+  
+
+  function toogleContent (){
+    content.style.display = content.style.display == 'none' ? 'flex' : 'none';
+  }
+</script>
+
+</body>
+</html>
